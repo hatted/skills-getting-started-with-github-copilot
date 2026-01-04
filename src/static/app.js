@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nameSpan.textContent = p;
 
             const deleteBtn = document.createElement("button");
+            deleteBtn.type = "button";
             deleteBtn.className = "delete-btn";
             deleteBtn.innerHTML = "&#10005;";
             deleteBtn.title = "Remove participant";

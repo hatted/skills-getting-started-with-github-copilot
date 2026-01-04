@@ -96,18 +96,11 @@ section h3 {
   display: block;
 }
 
-/* marker styling */
-.participants-list li::marker {
-  color: #1a237e;
-  font-size: 14px;
-}
-
-/* keep li as a list-item so markers show; visual card moved to .participant-row */
+/* keep li as normal block; hide the marker by using list-style: none on ul */
 .participant-item {
-  display: list-item;
+  display: block;
   margin-bottom: 8px;
-  /* small left offset so marker doesn't overlap */
-  padding-left: 4px;
+  padding-left: 0;
 }
 
 /* the visual row that contains the badge + name */
@@ -146,27 +139,6 @@ section h3 {
   flex: 1;
 }
 
-/* delete button for participants */
-.delete-btn {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 4px 8px;
-  font-size: 14px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  min-width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.delete-btn:hover {
-  background-color: #c82333;
-}
-
 .form-group {
   margin-bottom: 15px;
 }
@@ -199,6 +171,30 @@ button {
 
 button:hover {
   background-color: #3949ab;
+}
+
+/* delete button overrides generic button styles */
+.delete-btn {
+  background-color: #dc3545 !important;
+  color: white;
+  border: none;
+  padding: 4px 8px !important;
+  font-size: 14px !important;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: 28px !important;
+  height: 28px !important;
+  width: 28px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  background-color: #c82333 !important;
 }
 
 .message {
