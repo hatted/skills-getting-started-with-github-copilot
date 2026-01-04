@@ -60,8 +60,30 @@ document.addEventListener("DOMContentLoaded", () => {
             nameSpan.className = "participant-name";
             nameSpan.textContent = p;
 
+            const deleteBtn = document.createElement("button");
+            deleteBtn.className = "delete-btn";
+            deleteBtn.innerHTML = "&#10005;";
+            deleteBtn.title = "Remove participant";
+            deleteBtn.addEventListener("click", async () => {
+              try {
+                const response = await fetch(
+                  `/activities/${encodeURIComponent(name)}/unregister?email=${encodeURIComponent(p)}`,
+                  { method: "DELETE" }
+                );
+                if (response.ok) {
+                  li.remove();
+                } else {
+                  const result = await response.json();
+                  console.error("Error removing participant:", result.detail);
+                }
+              } catch (error) {
+                console.error("Error removing participant:", error);
+              }
+            });
+
             row.appendChild(badge);
             row.appendChild(nameSpan);
+            row.appendChild(deleteBtn);
             li.appendChild(row);
             ul.appendChild(li);
           });

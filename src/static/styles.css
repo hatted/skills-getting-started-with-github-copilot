@@ -87,11 +87,11 @@ section h3 {
   color: #333;
 }
 
-/* show native bullets and leave space for them */
+/* hide native bullets */
 .participants-list {
-  list-style: disc;
+  list-style: none;
   list-style-position: outside;
-  padding-left: 28px; /* room for bullets */
+  padding-left: 0;
   margin: 6px 0 0 0;
   display: block;
 }
@@ -143,6 +143,28 @@ section h3 {
 .participant-name {
   color: #333;
   font-weight: 600;
+  flex: 1;
+}
+
+/* delete button for participants */
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
 }
 
 .form-group {
